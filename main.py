@@ -14,25 +14,6 @@ direction = directions['TOP']
 running = True
 v = ''
 
-class myThreadx (threading.Thread):
-   def __init__(self, threadID, name, counter):
-      threading.Thread.__init__(self)
-      self.threadID = threadID
-      self.name = name
-      self.counter = counter
-
-      self._finished = threading.Event()
-   def run(self):
-      global v
-      print ("Starting RUN th")
-      lt = int(time.time() * 1000)
-      while 1:
-          ct = int(time.time() * 1000)
-          if (ct - lt < 100):
-              continue
-          print (str(v))
-          lt = ct
-
 class myThread (threading.Thread):
    def __init__(self, threadID, name, counter):
       threading.Thread.__init__(self)
